@@ -1,0 +1,268 @@
+/* ==========================================
+   PALETA "URBAN STREET" (DARK MODE)
+   ========================================== */
+:root {
+    --bg-dark: #121212;        /* Negro fondo */
+    --bg-card: #1E1E1E;        /* Gris oscuro para las tarjetas */
+    --accent-yellow: #FFB703;  /* Amarillo mostaza brillante */
+    --accent-red: #E63946;     /* Rojo fuego (opcional para picantes) */
+    --text-white: #FFFFFF;
+    --text-muted: #9BA4B5;
+}
+
+body.bg-dark-body {
+    background-color: #000000; /* Fondo detrás del celular en PC */
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-white);
+}
+
+.font-black {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.text-accent { color: var(--accent-yellow); }
+.text-muted-light { color: var(--text-muted); }
+.bg-dark-header { background-color: var(--bg-dark); }
+
+.tracking-wide { letter-spacing: 2px; }
+
+/* Contenedor del celular */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+    box-shadow: 0 0 50px rgba(255, 183, 3, 0.05); /* Brillo amarillo súper sutil en PC */
+}
+
+/* ==========================================
+   COMPONENTES UI FAST FOOD
+   ========================================== */
+
+/* Barra de búsqueda */
+.search-urban {
+    background-color: var(--bg-card);
+    border-radius: 50px; /* Bien redonda */
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.search-urban:focus-within {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px rgba(255, 183, 3, 0.2);
+}
+
+.search-urban input::placeholder { color: var(--text-muted); }
+.search-urban input:focus { outline: none; }
+.search-urban input { color: white; }
+
+/* Filtros Pills */
+.category-pills {
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pill-btn {
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.pill-btn.active {
+    background-color: var(--accent-yellow);
+    color: #000000;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ==========================================
+   TARJETAS DE PRODUCTOS
+   ========================================== */
+.urban-card {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.urban-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Acá la imagen ocupa toda la parte superior, es enorme */
+.urban-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent-yellow);
+}
+
+.urban-price {
+    background-color: var(--accent-yellow);
+    color: #000000;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.animate-fade {
+    animation: fadeInMenu 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   CARRITO DE COMPRAS Y BOTONES
+   ========================================== */
+
+/* Botón flotante del carrito */
+.cart-floating-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-yellow);
+    color: #000000;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.cart-floating-btn:hover {
+    transform: scale(1.1);
+}
+
+/* El globito rojo con la cantidad de items */
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-red);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bg-dark);
+}
+
+/* Botón "Sumar al pedido" en las tarjetas */
+.btn-add-urban {
+    background-color: rgba(255, 183, 3, 0.1);
+    color: var(--accent-yellow);
+    border: 2px solid var(--accent-yellow);
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-add-urban:hover {
+    background-color: var(--accent-yellow);
+    color: #000000;
+}
+
+/* Ítem dentro del carrito lateral */
+.cart-item-row {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-remove-item {
+    background: none;
+    border: none;
+    color: var(--accent-red);
+    font-size: 1.2rem;
+}
+
+/* Botón de Enviar por WhatsApp */
+.btn-whatsapp {
+    background-color: #25D366; /* Verde oficial de WhatsApp */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1EBE55;
+}
+
+/* Ajustes del Offcanvas para Dark Mode */
+.offcanvas { background-color: var(--bg-dark) !important; }
+.btn-close-white { filter: invert(1) grayscale(100%) brightness(200%); }
+
+/* Formularios dentro del carrito */
+.urban-input {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.urban-input:focus {
+    background-color: var(--bg-dark);
+    border-color: var(--accent-yellow);
+    color: var(--text-white);
+    box-shadow: none;
+}
+
+.urban-input::placeholder {
+    color: #666;
+}
+
+textarea {
+    resize: none; /* Esto quita la opción de arrastrar y agrandar */
+    overflow: hidden; /* Evita que aparezca la barra de scroll vertical */
+    min-height: 50px; /* Opcional: una altura mínima para empezar */
+}
+
+/* ==========================================
+   BOTÓN VOLVER (FAST FOOD)
+   ========================================== */
+.btn-volver {
+    color: var(--text-muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    color: var(--accent-yellow);
+    transform: translateX(-3px);
+}
+
+.btn-volver i {
+    font-size: 1.2rem;
+}

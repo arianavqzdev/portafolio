@@ -1,0 +1,203 @@
+/* ==========================================
+   PALETA "ROASTED BOUTIQUE"
+   ========================================== */
+:root {
+    --latte-bg: #F7F5F0;     /* Crema muy suave de fondo */
+    --espresso: #2B1E16;     /* Marrón oscuro súper profundo */
+    --mocha: #8A7363;        /* Marrón medio para textos secundarios */
+    --caramel: #C77543;      /* Acento cálido */
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--latte-bg); /* En móviles el fondo por defecto es el crema para evitar rebotes grises */
+    font-family: 'DM Sans', sans-serif;
+    color: var(--espresso);
+}
+
+/* Contenedor inteligente: Solo simula un celular si estás en la Computadora */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--latte-bg);
+    min-height: 100vh;
+}
+
+/* Reglas exclusivas para PC (Pantallas medianas y grandes) */
+@media (min-width: 576px) {
+    body {
+        background-color: #E8E6E1; /* El fondo gris solo se activa en PC */
+    }
+    .app-container {
+        box-shadow: 0 0 50px rgba(0,0,0,0.06); /* La sombra solo se dibuja en PC */
+    }
+}
+
+/* Optimización de pestañas*/
+.category-tabs {
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(138, 115, 99, 0.12);
+    padding-bottom: 8px;
+    padding-right: 30px; /* Espacio de aire para que el último filtro no se pegue al borde */
+    -webkit-overflow-scrolling: touch; /* Fuerza el scroll táctil ultra fluido en iOS/Safari */
+}
+
+/* ==========================================
+   HEADER Y PORTADA (Efecto Fundido con el Fondo)
+   ========================================== */
+.shop-header {
+    background-color: var(--latte-bg) !important; /* Cambiado a crema para que el fundido sea perfecto */
+    border: none;
+}
+
+.shop-cover {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* Necesario para posicionar el degradado encima */
+}
+
+/* Capa superior que crea el degradado hacia abajo */
+.shop-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%; /* Cubre la mitad inferior de la foto */
+    background: linear-gradient(to bottom, rgba(247, 245, 240, 0) 0%, var(--latte-bg) 100%);
+}
+
+/* Barra de búsqueda integrada */
+.search-boutique {
+    border-radius: 14px;
+    border: 1px solid rgba(138, 115, 99, 0.15);
+    transition: all 0.3s ease;
+}
+
+.search-boutique:focus-within {
+    border-color: var(--caramel);
+    box-shadow: 0 4px 15px rgba(199, 117, 67, 0.1);
+}
+
+.search-boutique input::placeholder { color: #b5a9a0; }
+.search-boutique input:focus { outline: none; }
+
+/* Tabs Editoriales */
+.category-tabs {
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(138, 115, 99, 0.2);
+    padding-bottom: 8px;
+}
+
+.tab-item {
+    font-weight: 500;
+    color: var(--mocha);
+    padding-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tab-item.active {
+    color: var(--espresso);
+    font-weight: 700;
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--caramel);
+    border-radius: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ==========================================
+   TARJETAS DE MENÚ LECTURA
+   ========================================== */
+.menu-item-card {
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-item-card:hover {
+    border-color: rgba(199, 117, 67, 0.2);
+    box-shadow: 0 8px 20px rgba(43, 30, 22, 0.05) !important;
+}
+
+/* ==========================================
+   IMÁGENES DE PRODUCTOS (Tamaño fijo y redondeadas)
+   ========================================== */
+.item-img {
+    width: 90px !important;      /* Ancho fijo estricto */
+    height: 90px !important;     /* Alto fijo estricto */
+    min-width: 90px;             /* Evita que se encoja */
+    flex-shrink: 0;              /* Bloquea que el texto aplaste la foto */
+    border-radius: 20px !important; /* Puntas bien redondeadas (podés subir a 25px si querés más curva) */
+    object-fit: cover;           /* Rellena el cuadrado perfecto recortando lo que sobra sin deformar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombrita suave para que la foto resalte */
+}
+
+.text-truncate-2 {
+    display: -webkit-box;
+    line-clamp: 2; /* standard property for compatibility */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Animación de entrada para los productos */
+.animate-fade {
+    animation: fadeInMenu 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   BOTÓN VOLVER (CAFETERÍA)
+   ========================================== */
+.btn-volver {
+    color: var(--espresso);
+    background-color: rgba(247, 245, 240, 0.85); /* Color latte semi-transparente */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px); /* Efecto vidrio esmerilado premium */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.btn-volver:hover {
+    background-color: var(--espresso);
+    color: var(--white);
+    transform: translateX(-3px);
+}
+
+/* ==========================================
+   FOOTER COPYRIGHT (CAFETERÍA) 
+   ========================================== */
+.footer-copyright {
+    font-size: 0.7rem;
+    color: rgba(138, 115, 99, 0.5);
+}
+
+.footer-link {
+    color: rgba(138, 115, 99, 0.7);
+    font-weight: normal; 
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--caramel); 
+}

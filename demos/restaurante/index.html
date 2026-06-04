@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - L'Étoile Fine Dining</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-elegant-body">
+
+    <main class="app-container mx-auto position-relative min-vh-100 pb-5 shadow-lg">
+        
+        <header class="fine-dining-hero position-relative">
+
+            <!-- Botón de Volver al Portfolio -->
+            <a href="../../index.html" class="btn-volver position-absolute top-0 start-0 mt-4 ms-4 z-3 text-decoration-none d-flex align-items-center">
+                <i class="bi bi-arrow-left me-2"></i>
+                <span class="small text-uppercase tracking-widest">Volver</span>
+            </a>
+            
+            <div class="lang-switch position-absolute top-0 end-0 mt-4 me-4 z-3">
+                <span id="lang-es" class="lang-option active" onclick="cambiarIdioma('es')">ES</span>
+                <span class="text-gold mx-1">|</span>
+                <span id="lang-en" class="lang-option" onclick="cambiarIdioma('en')">EN</span>
+            </div>
+
+            <div class="hero-content text-center position-relative z-2">
+                <div class="monogram-logo mb-3 shadow-sm">L'É</div>
+                
+                <h1 class="font-serif text-gold mb-0 display-4">L'Étoile</h1>
+                <p class="text-champagne-muted small text-uppercase tracking-widest mt-2 mb-0" id="ui-subtitle">Haute Cuisine</p>
+            </div>
+        </header>
+
+        <div class="category-elegant d-flex justify-content-center px-4 mt-4 mb-5 gap-4 overflow-x-auto no-scrollbar sticky-top z-3 pt-2 pb-1">
+            <span class="elegant-tab active" data-category="todos" id="tab-todos">Menú</span>
+            <span class="elegant-tab" data-category="entradas" id="tab-entradas">Entradas</span>
+            <span class="elegant-tab" data-category="principales" id="tab-principales">Principales</span>
+            <span class="elegant-tab" data-category="postres" id="tab-postres">Postres</span>
+            <span class="elegant-tab" data-category="vinos" id="tab-vinos">Vinos</span>
+        </div>
+
+        <div class="px-4 mt-3">
+            <div class="text-center mb-5">
+                <h2 class="font-serif text-champagne fs-3 fst-italic" id="title-category">Nuestra Carta</h2>
+                <div class="gold-separator mx-auto mt-3"></div>
+            </div>
+            
+            <div class="d-flex flex-column gap-5" id="menu-container">
+                </div>
+        </div>
+
+        <footer class="text-center py-4 mt-5">
+            <p class="footer-copyright mb-0">
+                © 2026 Desarrollado por AAV Web Service <br class="d-block d-sm-none"> 
+                <span class="d-none d-sm-inline">|</span> 
+                <a href="mailto:arianavqzdev@gmail.com" class="footer-link text-decoration-none">arianavqzdev@gmail.com</a>
+            </p>
+        </footer>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

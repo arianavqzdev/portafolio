@@ -1,0 +1,224 @@
+/* ==========================================
+   PALETA "MIDNIGHT LUXURY"
+   ========================================== */
+:root {
+    --midnight: #0A0E14;         /* Azul/Gris noche super profundo */
+    --gold: #D4AF37;             /* Dorado clásico */
+    --gold-muted: rgba(212, 175, 55, 0.3);
+    --champagne: #F4EFE6;        /* Blanco roto/crema para que no lastime la vista */
+    --champagne-muted: rgba(244, 239, 230, 0.6);
+}
+
+body.bg-elegant-body {
+    background-color: #000000; /* Fondo fuera del celular en PC */
+    font-family: 'Lato', sans-serif;
+    color: var(--champagne);
+}
+
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+.text-gold { color: var(--gold); }
+.text-champagne { color: var(--champagne); }
+.text-champagne-muted { color: var(--champagne-muted); }
+
+.border-gold-subtle { border-color: var(--gold-muted) !important; }
+.tracking-widest { letter-spacing: 4px; }
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--midnight);
+    min-height: 100vh;
+}
+
+/* ==========================================
+   HERO E IDENTIDAD VISUAL
+   ========================================== */
+.fine-dining-hero {
+    /* Imagen de las mesas del restaurante con un degradado que funde al azul noche */
+    background: linear-gradient(to bottom, rgba(10, 14, 20, 0.4) 0%, var(--midnight) 100%), 
+                url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=800&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
+/* El Monograma (Escudo/Logo) */
+.monogram-logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    background-color: rgba(10, 14, 20, 0.5); /* Sutil fondo oscuro para que resalte en la foto */
+    border-radius: 2px;
+}
+
+.monogram-logo-small {
+    width: 30px; height: 30px;
+    border: 1px solid var(--gold-muted);
+    color: var(--gold-muted);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   BOTÓN DE IDIOMA Y PESTAÑAS
+   ========================================== */
+.lang-switch {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.lang-option {
+    cursor: pointer;
+    color: var(--champagne-muted);
+    transition: color 0.3s ease;
+}
+
+.lang-option.active { color: var(--gold); }
+
+.category-elegant {
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--midnight); /* Para que al hacer sticky quede bien */
+}
+
+.elegant-tab {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--champagne-muted);
+    padding-bottom: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.elegant-tab.active {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.elegant-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.gold-separator {
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+/* ==========================================
+   DISEÑO DE PLATOS (DARK LUXURY)
+   ========================================== */
+.menu-item-elegant { position: relative; }
+
+.item-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 1.3rem;
+    color: var(--champagne);
+    margin: 0;
+    padding-right: 12px;
+    background-color: var(--midnight);
+    z-index: 2;
+}
+
+.item-dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted rgba(244, 239, 230, 0.2); /* Puntos re sutiles */
+    margin: 0 10px;
+    position: relative;
+    top: -6px;
+}
+
+.item-price {
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin: 0;
+    padding-left: 12px;
+    background-color: var(--midnight);
+    z-index: 2;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--champagne-muted);
+    margin-bottom: 0;
+    padding-right: 15%;
+}
+
+.animate-fade-slow {
+    animation: fadeInElegant 0.6s ease forwards;
+}
+
+@keyframes fadeInElegant {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   BOTÓN VOLVER (DEMO PORTFOLIO)
+   ========================================== */
+.btn-volver {
+    color: var(--champagne-muted);
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    color: var(--gold);
+    transform: translateX(-3px); /* Se mueve apenitas a la izquierda al pasar el mouse */
+}
+
+.btn-volver i {
+    font-size: 1.1rem; /* Flecha un poquito más grande que el texto */
+}
+
+/* ==========================================
+   FOOTER COPYRIGHT (RESTAURANTE) - SUTIL
+   ========================================== */
+.footer-copyright {
+    font-size: 0.7rem;
+    color: rgba(244, 239, 230, 0.3); /* Crema casi invisible */
+}
+
+.footer-link {
+    color: rgba(244, 239, 230, 0.5);
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--gold); /* Se ilumina en dorado al tocarlo */
+}
